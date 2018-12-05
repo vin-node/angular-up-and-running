@@ -25,3 +25,31 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Step 1
+Install node.js and npm
+Check
+`node --version`
+`npm --v`
+
+## Step 2
+Install TypeScript and Angular CLI
+`npm install -g typescript`
+`npm install -g @angular/cli`
+
+Check
+`ng --version`
+
+## Step 3
+Create Angular App
+`ng new angular-up-and-running`
+
+Check
+`ng serve`
+
+## Step 4
+Creating a component
+`ng generate component domain/app-entity`
+
+
+
