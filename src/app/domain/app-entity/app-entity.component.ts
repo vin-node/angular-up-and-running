@@ -7,8 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppEntityComponent implements OnInit {
 
-  constructor() { }
+  public id: String;
+  public name: String;
+  public definitionFilePath: String;
+  public appName: String;
+  public appUrl: String;
+  public dataBase: String;
+  public appGenerated: Boolean;
+  public modelFilePath: String;
 
+  
+  constructor() { }
+  
   ngOnInit() {
   }
 
