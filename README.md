@@ -51,5 +51,12 @@ Check
 Creating a component
 `ng generate component domain/app-entity`
 
+## Step 5
+Install `npm i -g angular-cli-ghpages`
+Build `ng build --prod --base-href "https://vin-node.github.io/angular-up-and-running/"`
+Publish `npx ngh --dir=dist/angular-up-and-running`
+
+
+
 
 
