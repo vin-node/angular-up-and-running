@@ -57,6 +57,17 @@ Build `ng build --prod --base-href "https://vin-node.github.io/angular-up-and-ru
 Publish `npx ngh --dir=dist/angular-up-and-running`
 
 
+References
+
+http://yanivefraim.github.io/be-ready-for-angular2-today/#/5
+
+
+
+http://bunopus.github.io/presentation-angular-2/#/
+
+https://github.com/bunopus/presentation-angular-2
+http://yanivefraim.github.io/be-ready-for-angular2-today/#/5
+
 
 
 
