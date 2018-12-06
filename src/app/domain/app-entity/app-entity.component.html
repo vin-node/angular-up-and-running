@@ -1,15 +1,178 @@
-<h3 class="bg-primary text-white p-3">Adam's To Do List</h3>
-<table class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Done</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Buy Flowers</td><td>No</td></tr>
-    <tr><td>Get Shoes</td><td>No</td></tr>
-    <tr><td>Collect Tickets</td><td>Yes</td></tr>
-    <tr><td>Call Joe</td><td>No</td></tr>
-  </tbody>
-</table>
+<div class="row">
+  
+  <div class="col-6">
+    <form
+      name="editForm"
+      role="form"
+      novalidate
+      (ngSubmit)="save()"
+      #editForm="ngForm"
+    >
+      <h2 id="jhi-app-entity-heading">Create or edit a App Entity</h2>
+
+      <!-- <jhi-alert-error></jhi-alert-error> -->
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group " [hidden]="!id">
+            <label for="id">ID</label>
+            <input
+              type="text"
+              class="form-control"
+              id="id"
+              name="id"
+              [(ngModel)]="id"
+              readonly
+            />
+            
+          </div>
+          <div class="form-group ">
+            <label class="form-control-label" for="field_name">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              id="field_name"
+              [(ngModel)]="name"
+              required
+            />
+           
+              <div
+                [hidden]="
+                  !(
+                    editForm.controls.name?.dirty &&
+                    editForm.controls.name?.invalid
+                  )
+                "
+              >
+                <small
+                  class="form-text text-danger"
+                  [hidden]="!editForm.controls.name?.errors?.required"
+                >
+                  This field is required.
+                </small>
+              </div>
+           
+          </div>
+          <div class="form-group ">
+            <label class="form-control-label" for="field_definitionFilePath"
+              >Definition File Path</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="definitionFilePath"
+              id="field_definitionFilePath"
+              [(ngModel)]="definitionFilePath"
+            />
+            <!---->
+          </div>
+
+          <div class="form-group ">
+            <label class="form-control-label" for="field_appName"
+              >App Name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="appName"
+              id="field_appName"
+              [(ngModel)]="appName"
+              required
+            />
+           
+              <div
+                [hidden]="
+                  !(
+                    editForm.controls.appName?.dirty &&
+                    editForm.controls.appName?.invalid
+                  )
+                "
+              >
+                <small
+                  class="form-text text-danger"
+                  [hidden]="!editForm.controls.appName?.errors?.required"
+                >
+                  This field is required.
+                </small>
+              </div>
+           
+          </div>
+          
+            </div>
+            <div class="col-6">
+              <div class="form-group ">
+                <label class="form-control-label" for="field_appUrl">App Url</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="appUrl"
+                  id="field_appUrl"
+                  [(ngModel)]="appUrl"
+                />
+              </div>
+              <div class="form-group  ">
+                <label class="form-control-label" for="field_dataBase"
+                  >Data Base</label
+                >
+                <select
+                  class="form-control"
+                  name="dataBase"
+                  [(ngModel)]="dataBase"
+                  id="field_dataBase"
+                >
+                  <option value="SQL">SQL</option>
+                  <option value="MONGODB">MONGODB</option>
+                  <option value="CASSANDRA">CASSANDRA</option>
+                  <option value="COUCHBASE">COUCHBASE</option>
+                </select>
+              </div>
+              <div class="form-group ">
+                <label class="form-control-label" for="field_appGenerated"
+                  >App Generated</label
+                >
+                <input
+                  type="checkbox"
+                  class="form-control"
+                  name="appGenerated"
+                  id="field_appGenerated"
+                  [(ngModel)]="appGenerated"
+                />
+              </div>
+              <div class="form-group ">
+                <label class="form-control-label" for="field_modelFilePath"
+                  >Model File Path</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  name="modelFilePath"
+                  id="field_modelFilePath"
+                  [(ngModel)]="modelFilePath"
+                />
+              </div>
+              <div class="form-group">
+                <button
+                  type="button"
+                  id="cancel-save"
+                  class="btn btn-secondary"
+                  (click)="previousState()"
+                >
+                Cancel
+                  <!-- <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span> -->
+                </button>
+                <button
+                  type="submit"
+                  id="save-entity"
+                  [disabled]="editForm.form.invalid || isSaving"
+                  class="btn btn-primary"
+                >
+                Save
+                  <!-- <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span> -->
+                </button>
+              </div>
+          
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

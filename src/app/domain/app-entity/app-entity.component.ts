@@ -20,6 +20,14 @@ export class AppEntityComponent implements OnInit {
   constructor() { }
   
   ngOnInit() {
+    this.id = "one";
+    this.name = "First Entity";
+    this.definitionFilePath = "d:\test\file";
+    this.appName = "Application Name";
+    this.appUrl = "App URL";
+    this.dataBase = "SQL";
+    this.appGenerated = true;
+    this.modelFilePath = "ModelFilePath"; 
   }
 
 }
